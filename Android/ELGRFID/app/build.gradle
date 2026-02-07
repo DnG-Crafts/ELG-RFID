@@ -1,0 +1,44 @@
+plugins {
+    alias(libs.plugins.android.application)
+}
+
+android {
+    namespace 'dngsoftware.elgrfid'
+    compileSdk {
+        version = release(36)
+    }
+
+    defaultConfig {
+        resourceConfigurations += ['en']
+        applicationId "dngsoftware.elgrfid"
+        minSdk 21
+        targetSdk 36
+        versionCode 1
+        versionName "1"
+    }
+    
+    buildTypes {
+        release {
+            minifyEnabled true
+            shrinkResources true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_11
+        targetCompatibility JavaVersion.VERSION_11
+    }
+
+    buildFeatures {
+        viewBinding true
+    }
+}
+
+dependencies {
+    implementation libs.appcompat.v161
+    implementation libs.material
+    implementation libs.activity.v108
+    implementation libs.constraintlayout.v214
+    implementation libs.flexbox
+
+}

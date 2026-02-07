@@ -1,0 +1,19 @@
+[versions]
+activityVersion = "1.0.8"
+agp = "9.0.0"
+appcompatVersion = "1.6.1"
+constraintlayoutVersion = "2.1.4"
+flexbox = "3.0.0"
+material = "1.12.0"
+
+[libraries]
+activity-v108 = { module = "androidx.activity:activity", version.ref = "activityVersion" }
+appcompat-v161 = { module = "androidx.appcompat:appcompat", version.ref = "appcompatVersion" }
+constraintlayout-v214 = { module = "androidx.constraintlayout:constraintlayout", version.ref = "constraintlayoutVersion" }
+flexbox = { module = "com.google.android.flexbox:flexbox", version.ref = "flexbox" }
+material = { group = "com.google.android.material", name = "material", version.ref = "material" }
+
+
+[plugins]
+android-application = { id = "com.android.application", version.ref = "agp" }
+

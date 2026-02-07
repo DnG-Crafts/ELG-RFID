@@ -1,0 +1,410 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:fillViewport="true"
+    android:background="@color/background_main">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center|fill_vertical"
+        android:padding="16dp"
+        android:maxWidth="500dp"
+        android:clipChildren="false"
+        android:gravity="center">
+
+        <LinearLayout
+            android:id="@+id/rgbSlidersArea"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/rounded_card_background"
+            android:clipChildren="false"
+            android:orientation="vertical"
+            android:padding="16dp"
+            app:layout_constraintBottom_toTopOf="@+id/gradientPickerArea"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <LinearLayout
+                android:id="@+id/rgbSlidersHeader"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="?android:attr/selectableItemBackground"
+                android:clickable="true"
+                android:focusable="true"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingBottom="8dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/rgb_sliders"
+                    android:textColor="@color/text_main"
+                    android:textSize="18sp"
+                    android:textStyle="normal" />
+
+                <ImageView
+                    android:id="@+id/rgbSlidersToggleIcon"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    app:tint="@color/text_main"
+                    android:importantForAccessibility="no"
+                    android:src="@drawable/ic_arrow_up" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/rgbSlidersContent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="visible">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:text="@string/red"
+                    android:textColor="@color/text_main"
+                    android:textSize="16sp" />
+
+                <SeekBar
+                    android:id="@+id/redSlider"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    android:max="255"
+                    android:paddingStart="16dp"
+                    android:paddingEnd="16dp"
+                    android:progress="255"
+                    android:progressTint="#EF4444"
+                    android:thumbTint="#EF4444" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:text="@string/green"
+                    android:textColor="@color/text_main"
+                    android:textSize="16sp" />
+
+                <SeekBar
+                    android:id="@+id/greenSlider"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    android:max="255"
+                    android:paddingStart="16dp"
+                    android:paddingEnd="16dp"
+                    android:progress="0"
+                    android:progressTint="#22C55E"
+                    android:thumbTint="#22C55E" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:text="@string/blue"
+                    android:textColor="@color/text_main"
+                    android:textSize="16sp" />
+
+                <SeekBar
+                    android:id="@+id/blueSlider"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    android:max="255"
+                    android:paddingStart="16dp"
+                    android:paddingEnd="16dp"
+                    android:progress="0"
+                    android:progressTint="#3B82F6"
+                    android:thumbTint="#3B82F6" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/gradientPickerArea"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/rounded_card_background"
+            android:orientation="vertical"
+            android:padding="16dp"
+            app:layout_constraintBottom_toTopOf="@+id/presetColorsArea"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/rgbSlidersArea">
+
+            <LinearLayout
+                android:id="@+id/gradientPickerHeader"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="?android:attr/selectableItemBackground"
+                android:clickable="true"
+                android:focusable="true"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingBottom="8dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/color_picker"
+                    android:textColor="@color/text_main"
+                    android:textSize="18sp"
+                    android:textStyle="normal" />
+
+                <ImageView
+                    android:id="@+id/gradientPickerToggleIcon"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    app:tint="@color/text_main"
+                    android:importantForAccessibility="no"
+                    android:src="@drawable/ic_arrow_up" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/gradientPickerContent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="visible">
+
+                <View
+                    android:id="@+id/gradientPickerView"
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:background="@android:color/darker_gray" />
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/presetColorsArea"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/rounded_card_background"
+            android:orientation="vertical"
+            android:padding="16dp"
+            app:layout_constraintBottom_toTopOf="@+id/photoColorArea"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/gradientPickerArea">
+
+            <LinearLayout
+                android:id="@+id/presetColorsHeader"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="?android:attr/selectableItemBackground"
+                android:clickable="true"
+                android:focusable="true"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingBottom="8dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/preset_colors"
+                    android:textColor="@color/text_main"
+                    android:textSize="18sp"
+                    android:textStyle="normal" />
+
+                <ImageView
+                    android:id="@+id/presetColorsToggleIcon"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    app:tint="@color/text_main"
+                    android:importantForAccessibility="no"
+                    android:src="@drawable/ic_arrow_up" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/presetColorsContent"
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:orientation="vertical"
+                android:visibility="visible">
+
+                <androidx.core.widget.NestedScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scrollbars="vertical">
+
+                    <com.google.android.flexbox.FlexboxLayout
+                        android:id="@+id/presetColorGrid"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:flexWrap="wrap"
+                        app:alignItems="center"
+                        app:justifyContent="center">
+
+                    </com.google.android.flexbox.FlexboxLayout>
+
+                </androidx.core.widget.NestedScrollView>
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/photoColorArea"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/rounded_card_background"
+            android:orientation="vertical"
+            android:padding="16dp"
+            app:layout_constraintBottom_toTopOf="@+id/colorDisplayArea"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/presetColorsArea">
+
+            <LinearLayout
+                android:id="@+id/photoColorHeader"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="?android:attr/selectableItemBackground"
+                android:clickable="true"
+                android:focusable="true"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingBottom="8dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/photo_color"
+                    android:textColor="@color/text_main"
+                    android:textSize="18sp"
+                    android:textStyle="normal" />
+
+                <ImageView
+                    android:id="@+id/photoColorToggleIcon"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    app:tint="@color/text_main"
+                    android:importantForAccessibility="no"
+                    android:src="@drawable/ic_arrow_up" />
+            </LinearLayout>
+
+            <FrameLayout
+                android:id="@+id/photoColorContent"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:visibility="visible">
+
+                <ImageView
+                    android:id="@+id/photoImage"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/camera"
+                    android:scaleType="fitXY"
+                    tools:srcCompat="@drawable/camera"
+                    android:importantForAccessibility="no" />
+
+                <ImageView
+                    android:id="@+id/clearImage"
+                    android:layout_width="44dp"
+                    android:layout_height="44dp"
+                    android:visibility="gone"
+                    android:src="@drawable/twotone_cancel_24"
+                    android:layout_gravity="top|end"
+                    tools:srcCompat="@drawable/twotone_cancel_24"
+                    android:importantForAccessibility="no" />
+
+            </FrameLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/colorDisplayArea"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/rounded_card_background"
+            android:orientation="vertical"
+            android:padding="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/photoColorArea">
+
+            <LinearLayout
+                android:id="@+id/colorDisplayContent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:visibility="visible"
+                tools:ignore="UselessParent">
+
+                <FrameLayout
+                    android:id="@+id/colorDisplayFrame"
+                    android:layout_width="180dp"
+                    android:layout_height="60dp"
+                    android:layout_weight="10"
+                    android:layout_gravity="start"
+                    android:layout_marginStart="10dp">
+
+                    <View
+                        android:id="@+id/colorDisplay"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="#0000FF" />
+
+                    <TextView
+                        android:id="@+id/txtcolor"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:fontFamily="monospace"
+                        android:gravity="center"
+                        android:shadowColor="#80000000"
+                        android:shadowDx="1"
+                        android:shadowDy="1"
+                        android:shadowRadius="2"
+                        android:text="@string/_00_00_00_00"
+                        android:textAlignment="center"
+                        android:textColor="@android:color/white"
+                        android:textSize="24sp"
+                        android:textStyle="bold" />
+                </FrameLayout>
+
+                <Space
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+
+                <Button
+                    android:textColor="@color/text_inverted"
+                    android:id="@+id/btncls"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:padding="14dp"
+                    android:text="@string/select"
+                    android:textSize="16sp" />
+            </LinearLayout>
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

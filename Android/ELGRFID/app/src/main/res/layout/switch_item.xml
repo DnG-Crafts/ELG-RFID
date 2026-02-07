@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.materialswitch.MaterialSwitch
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/drawer_switch"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    app:thumbTint="@color/switch_tint_selector"
+    android:paddingEnd="16dp"
+    android:paddingStart="1dp"
+    android:theme="@style/Theme.ElgRFID"
+    android:scaleX="0.8"
+    android:scaleY="0.8"
+    android:text="" />

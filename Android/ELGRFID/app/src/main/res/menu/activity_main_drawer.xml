@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+    <item android:title="@string/app">
+        <menu>
+            <item
+                android:id="@+id/nav_dark"
+                android:icon="@drawable/twotone_dark_mode_24"
+                android:title="@string/dark_mode"
+                app:actionLayout="@layout/switch_item" />
+        </menu>
+    </item>
+    <item android:title="@string/rfid_functions">
+        <menu>
+            <item
+                android:id="@+id/nav_read"
+                android:icon="@drawable/twotone_contactless_24"
+                android:title="@string/auto_read"
+                app:actionLayout="@layout/switch_item" />
+            <item
+                android:id="@+id/nav_format"
+                android:icon="@drawable/twotone_layers_clear_24"
+                android:title="@string/format_tag" />
+            <item
+                android:id="@+id/nav_memory"
+                android:icon="@drawable/twotone_memory_24"
+                android:title="@string/read_tag_memory" />
+        </menu>
+    </item>
+    <item android:title="@string/nfc_functions">
+        <menu>
+            <item
+                android:id="@+id/nav_launch"
+                android:icon="@drawable/twotone_nfc_24"
+                android:title="@string/launch_app"
+                app:actionLayout="@layout/switch_item" />
+        </menu>
+    </item>
+</menu>
