@@ -61,8 +61,8 @@ This data is what the printer uses to identify the filament.<br>
 | :--- | :--- | :--- | :--- | :--- | :--- |
 | **16** | 36 | EE | EE | EE | Header |
 | **17** | EE | 00 | 00 | 00 | Manufacturer ID |
-| **18** | 00 | 80 | 76 | 65 | Material Type ("PLA") |
-| **19** | 00 | 04 | 00 | 00 | Material Position (PLA-CF") |
+| **18** | 00 | 80 | 76 | 65 | Material Type (PLA) |
+| **19** | 00 | 04 | 00 | 00 | Material Position (PLA-CF) |
 | **20** | FF | 37 | 00 | FF | Color Code (#FF3700) |
 | **21** | 00 | D2 | 00 | F0 | Extuder Temp Min / Max (210 / 240) |
 | **22** | 00 | 00 | 00 | 00 | Unknown - Bed Temps? |
