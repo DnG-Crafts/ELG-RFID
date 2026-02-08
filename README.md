@@ -62,7 +62,7 @@ This data is what the printer uses to identify the filament.<br>
 | **20** | FF | 37 | 00 | FF | Color Code (#FF3700) |
 | **21** | 00 | D2 | 00 | F0 | Extuder Temp Min / Max (210 / 240) |
 | **22** | 00 | 00 | 00 | 00 | Unknown - Bed Temps? |
-| **23** | 00 | AF | 83 | E8 | Diameter / Weight (175 / 1000) |
+| **23** | 00 | AF | 03 | E8 | Diameter / Weight (175 / 1000) |
 | **24** | 00 | 36 | C8 | 00 | Unknown - Production Code?  |
 
 
