@@ -1,6 +1,6 @@
 # Full Tag Dump
 
-This data was dumped from a <a href="https://au.elegoo.com/products/pla-filament-1-75mm-colored-1kg?variant=51704284610873">elegoo rfid spool</a>. <br>
+This data was dumped from a <a href="https://au.elegoo.com/products/pla-filament-1-75mm-colored-1kg?variant=51704284610873">elegoo rfid spool</a><br>
 The spools have rfid tags on both sides under the **((( RFID )))** logo.<br>
 
 <br>
