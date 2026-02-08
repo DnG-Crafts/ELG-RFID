@@ -19,6 +19,10 @@ The android app is available on google play<br>
 
 ## Tag Format
 
+<br>
+
+You can view a full tag dump <a href=https://github.com/DnG-Crafts/ELG-RFID/blob/main/docs/README.md>Here</a>
+
 <br><br>
 
 ### URI Section 
@@ -65,10 +69,5 @@ This data is what the printer uses to identify the filament.<br>
 | **23** | 00 | AF | 03 | E8 | Diameter / Weight (175 / 1000) |
 | **24** | 00 | 36 | C8 | 00 | Unknown - Production Code?  |
 
-
-<br>
-<br>
-
-You can view a full tag dump <a href=https://github.com/DnG-Crafts/ELG-RFID/blob/main/docs/README.md>Here</a>
 
 <br>
