@@ -55,13 +55,13 @@ public class Utils {
                 list.add(new Filament(2, "PLA PRO", 190, 230));
                 list.add(new Filament(3, "PLA Silk", 190, 230));
                 list.add(new Filament(4, "PLA-CF", 210, 240));
-                list.add(new Filament(5, "PLA Matte", 190, 230));
-                list.add(new Filament(6, "PLA Wood", 190, 230));
-                list.add(new Filament(7, "PLA Basic", 190, 230));
-                list.add(new Filament(8, "RAPID PLA+", 190, 230));
-                list.add(new Filament(9, "PLA Marble", 190, 230));
-                list.add(new Filament(10, "PLA Galaxy", 190, 230));
-                list.add(new Filament(11, "PLA Red Copper", 190, 230));
+                list.add(new Filament(6, "PLA Matte", 190, 230));
+                list.add(new Filament(8, "PLA Wood", 190, 230));
+                list.add(new Filament(9, "PLA Basic", 190, 230));
+                list.add(new Filament(10, "RAPID PLA+", 190, 230));
+                list.add(new Filament(11, "PLA Marble", 190, 230));
+                list.add(new Filament(12, "PLA Galaxy", 190, 230));
+                list.add(new Filament(13, "PLA Red Copper", 190, 230));
                 break;
             case "PETG":
                 list.add(new Filament(0, "PETG", 230, 260));
@@ -252,8 +252,16 @@ public class Utils {
         return nfcA.transceive(data);
     }
 
-    public static void writeUrl(String inputUrl, NfcA nfcA) {
+    public static void writeUrl(String inputUrl, NfcA nfcA, int tagType) {
         try {
+            byte sizeByte;
+            if (tagType == 215) {
+                sizeByte = (byte) 0x3E;
+            } else if (tagType == 216) {
+                sizeByte = (byte) 0x6D;
+            } else {
+                sizeByte = (byte) 0xA0;
+            }
             String cleanUrl = inputUrl;
             byte uriIdentifier = 0x02;
             if (inputUrl.startsWith("https://www.")) {
@@ -272,7 +280,7 @@ public class Utils {
             int payloadLength = urlBytes.length + 1;
             int ndefMsgLength = payloadLength + 4;
             ByteBuffer bb = ByteBuffer.allocate(urlBytes.length + 20);
-            bb.put(new byte[]{(byte)0x01, (byte)0x03, (byte)0xA0, (byte)0x0C, (byte)0x34});
+            bb.put(new byte[]{(byte)0x01, (byte)0x03, sizeByte, (byte)0x0C, (byte)0x34});
             bb.put((byte)0x03);
             bb.put((byte)ndefMsgLength);
             bb.put((byte)0xD1);
